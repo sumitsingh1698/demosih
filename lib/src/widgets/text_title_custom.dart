@@ -11,14 +11,24 @@ class TextTitleCustom extends StatelessWidget {
   Widget build(BuildContext context) {
     if (type == "heading")
       return Container(
-         margin: EdgeInsets.all(20),
-        
-         decoration: BoxDecoration(border: Border.all(width:5.0),borderRadius: BorderRadius.all(Radius.circular(5.0)),color: Colors.amber),
+         margin: EdgeInsets.all(10),
+         padding: EdgeInsets.symmetric(vertical:20.0,horizontal:5.0),
+         decoration: BoxDecoration(color: Colors.lightGreen),
           child: Text(
         text,
-        style: TextStyle(fontSize: 30,backgroundColor: Colors.green),
+        style: TextStyle(fontSize: 24,backgroundColor: Colors.lightGreen,fontWeight: FontWeight.bold),
         textAlign: TextAlign.center,
       ));
-      return Text("fddf");
+    if( type == "list")
+      return Container(
+         margin: EdgeInsets.all(20),
+         decoration: BoxDecoration(),
+          child: Text(
+        text,
+        style: TextStyle(fontSize: 20,color: Colors.red,fontWeight: FontWeight.bold),
+        textAlign: TextAlign.center,
+
+      ));
+      return null;
   }
 }

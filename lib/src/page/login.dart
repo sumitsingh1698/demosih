@@ -1,3 +1,4 @@
+import 'package:demosih/src/routing/application.dart';
 import 'package:demosih/src/widgets/text_field_form.dart';
 import "package:flutter/material.dart";
 
@@ -24,7 +25,7 @@ class _LoginState extends State<Login> {
               TextFormFieldCustom(type: "password", data: data, label: "Password :"),
               // Text(notification_text),
               RaisedButton(onPressed: (){
-                
+                Application.router.navigateTo(context,"/profile/$data",replace: false);
               },child:Text("Login"))
             ],
           ),

@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:demosih/src/routing/application.dart';
 import 'package:demosih/src/widgets/text_field_form.dart';
 import 'package:demosih/src/widgets/text_title_custom.dart';
 import 'package:flutter/material.dart';
@@ -18,15 +21,24 @@ class _UserDetailEditState extends State<UserDetailEdit> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Detail"),
+        title: Text("Details"),
       ),
       floatingActionButton: Container(
         height: 70,
         width: 80,
         child: FloatingActionButton(
           onPressed: () {
+            
             print(step);
-            setState(() {});
+            if(step >= 4){
+              String alldata = json.encode(data);
+              Application.router.navigateTo(context, "/profile/$alldata");
+            }
+            if(_formkey.currentState.validate()){
+               _formkey.currentState.save();
+               setState(() {}); 
+            }
+            
           },
           child: Icon(
             floatingIcon,
@@ -53,7 +65,7 @@ class _UserDetailEditState extends State<UserDetailEdit> {
             text: "Register Details",
           ),
           TextFormFieldCustom(
-              type: 'email_address', label: "Email :", data: data),
+              type: 'email', label: "Email :", data: data),
           TextFormFieldCustom(
               type: 'mobile_no', label: "Mobile No :", data: data),
           TextFormFieldCustom(

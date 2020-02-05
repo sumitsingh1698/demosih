@@ -10,7 +10,7 @@ class _IndexState extends State<Index> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Center(child: Text("STET"))),
+      appBar: AppBar(title: Center(child: Text("Sikkim Teacher Eligibility Test"))),
       body: SafeArea(
         child: Container(
           child: Center(
@@ -31,7 +31,7 @@ class _IndexState extends State<Index> {
                   child: Text("New User"),
                   onPressed: () {
                     Application.router
-                        .navigateTo(context, "/userdetailedit", replace: true);
+                        .navigateTo(context, "/userdetailedit");
                   },
                   color: Colors.lightGreen,
                 ),
@@ -41,7 +41,7 @@ class _IndexState extends State<Index> {
                 Container(
                   margin: EdgeInsets.all(30),
                   child: Text(
-                    " have ID and Password for Login",
+                    " Have ID and Password for Login",
                     style: TextStyle(
                         fontSize: 25,
                         color: Colors.redAccent,
@@ -53,7 +53,7 @@ class _IndexState extends State<Index> {
                   child: Text("Login"),
                   onPressed: () {
                     Application.router
-                        .navigateTo(context, "/login", replace: true);
+                        .navigateTo(context, "/login");
                   },
                   color: Colors.lightGreen,
                 )
