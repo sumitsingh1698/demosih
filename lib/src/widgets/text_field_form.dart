@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 
 class TextFormFieldCustom extends StatelessWidget {
   final String type;
+  final String label;
   final Map<String, String> data;
 
   TextFormFieldCustom({
     @required this.type,
     @required this.data,
+    @required this.label,
   });
 
   @override
@@ -25,8 +27,9 @@ class TextFormFieldCustom extends StatelessWidget {
           }
           return null;
         },
+        initialValue: data['$type'] == null ? null : data['$type'],
         decoration: InputDecoration(
-          labelText: "$type",
+          labelText: label,
           border: OutlineInputBorder(),
         ),
       ),
